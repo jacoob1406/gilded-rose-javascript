@@ -11,8 +11,7 @@ const createTestShop = () => {
   items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20));
   items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 10, 49));
   items.push(new Item('Backstage passes to a TAFKAL80ETC concert', 5, 49));
-  // this conjured item does not work properly yet
-  items.push(new Item('Conjured Mana Cake', 3, 6));
+  items.push(new Item('Conjured item', 3, 6));
 
   return new Shop(items);
 };
@@ -74,14 +73,15 @@ describe('Gilded Rose', () => {
   it('should update properly the quality property', () => {
     const gildedRose = createTestShop();
     gildedRose.updateQuality();
-    expect(gildedRose.items[8].quality).toEqual(5);
+    console.log(gildedRose.items);
+    expect(gildedRose.items[8].quality).toEqual(4);
   });
 
   it('should update properly the quality property after 2 updates', () => {
     const gildedRose = createTestShop();
     gildedRose.updateQuality();
     gildedRose.updateQuality();
-    expect(gildedRose.items[8].quality).toEqual(4);
+    expect(gildedRose.items[8].quality).toEqual(2);
   });
 
   it('should update properly the quality property after 3 updates', () => {
@@ -89,6 +89,6 @@ describe('Gilded Rose', () => {
     gildedRose.updateQuality();
     gildedRose.updateQuality();
     gildedRose.updateQuality();
-    expect(gildedRose.items[8].quality).toEqual(3);
+    expect(gildedRose.items[8].quality).toEqual(0);
   });
 });

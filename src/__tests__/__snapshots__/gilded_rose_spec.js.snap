@@ -44,7 +44,7 @@ Array [
       "sellIn": 5,
     },
     Object {
-      "name": "Conjured Mana Cake",
+      "name": "Conjured item",
       "quality": 6,
       "sellIn": 3,
     },
@@ -91,8 +91,8 @@ Array [
       "sellIn": 4,
     },
     Object {
-      "name": "Conjured Mana Cake",
-      "quality": 5,
+      "name": "Conjured item",
+      "quality": 4,
       "sellIn": 2,
     },
   ],
