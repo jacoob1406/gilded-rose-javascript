@@ -2,6 +2,7 @@ import { updateAgedBrie } from './agedBrie';
 import { updateLegendary } from './legendary';
 import { updateBackstagePass } from './backstagePass';
 import { updateNormal } from './normal';
+import { updateConjured } from './conjured';
 
 export const isAgedBrie = item => {
   return item.name === 'Aged Brie';
@@ -12,6 +13,9 @@ export const isBackstagePass = item => {
 export const isLegendary = item => {
   return item.name === 'Sulfuras, Hand of Ragnaros';
 };
+export const isConjured = item => {
+  return item.name === 'Conjured item';
+};
 
 export const getUpdateStrategy = item => {
   if (isLegendary(item)) {
@@ -20,6 +24,10 @@ export const getUpdateStrategy = item => {
 
   if (isAgedBrie(item)) {
     return updateAgedBrie;
+  }
+
+  if (isConjured(item)) {
+    return updateConjured;
   }
 
   if (isBackstagePass(item)) {
